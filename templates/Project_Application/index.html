@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%extends 'Project_Application/base.html'%}
+{%block body_block%}
+<h1>Manager Information DashBoard</h1><hr>
+ <table border="2">
+   <thead>
+     <th>Email_Id</th>
+     <th>First Name</th>
+     <th>Last Name</th>
+     <th>Password</th>
+     <th>Address</th>
+     <th>Date of Birth</th>
+     <th>Company</th>
+     <th>Actions</th>
+   </thead>
+   {% for man in managers %}
+   <tr>
+     <td>{{man.email}}</td>
+     <td>{{man.firstname}}</td>
+     <td>{{man.lastname}}</td>
+     <td>{{man.password}}</td>
+     <td>{{man.address}}</td>
+     <td>{{man.dateofbirth}}</td>
+     <td>{{man.company}}</td>
+     <td><a href="/update/{{man.id}}">Update</a> <a href="/delete/{{man.id}}">Delete</a></td>
+   </tr>
+   {% endfor %}
+ </table><br><br>
+ <a href="/create" class="btn btn-success btn-lg">Insert New Manager</a>
+{%endblock%}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{%extends 'Project_Application/base.html'%}
+{%block body_block%}
+<h1>Manager Information Update Form</h1><hr>
+<form method="post">
+  {%csrf_token%}
+   Email_Id: <input type="text" name="email" value="{{manager.email}}"><br>
+   First Name: <input type="text" name="firstname" value="{{manager.firstname}}"><br>
+   Last Name: <input type="text" name="lastname" value="{{manager.lastname}}"><br>
+   Password: <input type="text" name="password" value="{{manager.password}}"><br>
+   Address: <input type="text" name="address" value="{{manager.address}}"><br>
+   Date of Birth: <input type="text" name="dateofbirth" value="{{manager.dateofbirth}}"><br>
+   Company: <input type="text" name="company" value="{{manager.company}}"><br><br>
+   <input type="submit" class="btn btn-primary btn-lg" value="Update Record">
+</form>
+{%endblock%}
